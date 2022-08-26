@@ -85,7 +85,7 @@ def lose(nice,mean,name):
 
 
 
-def again(nice,mean,namne):
+def again(nice,mean,name):
     stop = True
     while stop:
         choice = input("\nDo you want to play again? (y/n):\n>>> ").lower()

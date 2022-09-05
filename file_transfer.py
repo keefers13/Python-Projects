@@ -17,7 +17,8 @@ from tkinter import *
 import tkinter.filedialog
 import os
 import shutil
-from datetime import datetime,timedelta
+import datetime
+from datetime import timedelta
 import pytz
 
 
@@ -89,11 +90,13 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #Runs through each file in the source directory
         for i in source_files:
+            filePath = os.path.join(source, i)
+            
             #retreives last modified date and today's date
-            modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(self))
+            modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(filePath))
             todaysDate = datetime.datetime.today()
             
-            filePathList = file.split("\\") # Create a list from the filepath
+            filePathList = i.split("\\") # Create a list from the filepath
             filename = filePathList[-1] # The last element is a the filename
             
             # If modified within last 24 hours, then copy to destination folder
@@ -101,7 +104,7 @@ class ParentWindow(Frame):
             
           # If the file was edited less then 24 hours ago then copy it
             if modifyDateLimit > todaysDate:
-                shutil.copy2(file, destinationPath + filename)
+                shutil.move(source + '/' + i, destination + filename)
 
     #creates function to exit program
     def exit_program(self):

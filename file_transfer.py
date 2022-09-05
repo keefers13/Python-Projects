@@ -76,6 +76,9 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #Runs through each file in the source directory
         for i in source_files:
+            #retreives last modified date and today's date
+            modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(file))
+            todaysDate = datetime.datetime.today()
             #moves each file from the source to the destination
             shutil.move(source + '/' + i, destination)
             print (i + 'was successfully transferred.')

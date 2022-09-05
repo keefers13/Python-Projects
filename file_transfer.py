@@ -1,4 +1,17 @@
 
+#
+# Python: 3.10.6
+#
+# Author: Keith Moore
+#
+# Purpose: Transfers files from a source directory to a destination, and checks every 24 hours to transfer new or modified files.
+#
+#
+# Tested OS: This code was written and tested to work with macOS Monterrey
+#
+
+
+
 import tkinter as tk
 from tkinter import *
 import tkinter.filedialog

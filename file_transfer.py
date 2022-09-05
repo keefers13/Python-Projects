@@ -92,9 +92,16 @@ class ParentWindow(Frame):
             #retreives last modified date and today's date
             modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(file))
             todaysDate = datetime.datetime.today()
-            #moves each file from the source to the destination
-            shutil.move(source + '/' + i, destination)
-            print (i + 'was successfully transferred.')
+            
+            filePathList = file.split("\\") # Create a list from the filepath
+            filename = filePathList[-1] # The last element is a the filename
+            
+            # If modified within last 24 hours, then copy to destination folder
+            modifyDateLimit = modifyDate + datetime.timedelta(days=1)
+            
+          # If the file was edited less then 24 hours ago then copy it
+            if modifyDateLimit > todaysDate:
+                shutil.copy2(file, destinationPath + filename)
 
     #creates function to exit program
     def exit_program(self):

@@ -90,7 +90,7 @@ class ParentWindow(Frame):
         #Runs through each file in the source directory
         for i in source_files:
             #retreives last modified date and today's date
-            modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(file))
+            modifyDate = datetime.datetime.fromtimestamp(os.path.getmtime(self))
             todaysDate = datetime.datetime.today()
             
             filePathList = file.split("\\") # Create a list from the filepath

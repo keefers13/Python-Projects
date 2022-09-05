@@ -104,7 +104,7 @@ class ParentWindow(Frame):
             
           # If the file was edited less then 24 hours ago then copy it
             if modifyDateLimit > todaysDate:
-                shutil.move(source + '/' + i, destination + filename)
+                shutil.move(source + '/' + i, destination)
 
     #creates function to exit program
     def exit_program(self):

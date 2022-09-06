@@ -7,7 +7,7 @@
 # Purpose: Transfers files from a source directory to a destination, and checks every 24 hours to transfer new or modified files.
 #
 #
-# Tested OS: This code was written and tested to work with macOS Monterrey
+# Tested OS: This code was written and tested to some what work with macOS Monterrey
 #
 
 

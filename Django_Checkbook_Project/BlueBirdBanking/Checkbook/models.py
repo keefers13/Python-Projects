@@ -27,4 +27,4 @@ class Transaction(models.Model):
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
 
     # Defines the model Manager for Transactions
-    Transactions = models.Manager
+    Transactions = models.Manager()
